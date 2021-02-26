@@ -1,0 +1,18 @@
+-
+  id: test_login001.6
+  detail : 输入正确的手机号、密码、验证码，是否登录成功
+  screenshot : phone_pawd_success
+  data :
+    username : 18730001238
+    password: 123456
+    imgCode: ""
+    textarea: good
+    filePath: r'F:\MOCC\123.jpg'
+  check :
+    - 欢迎登录：大同招生政府
+#-
+#  id: test_login002.1
+#  detail : 查看事件
+#  screenshot : event
+#  check :
+#    - 事件处理

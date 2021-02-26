@@ -1,0 +1,1 @@
+[2021-01-14 11:48:55,781] [log.py|__console] [line:46] ERROR   : <public.page_obj.workPage.login object at 0x00000219DB8D11F0>页面中未能找到('name', 'file')元素

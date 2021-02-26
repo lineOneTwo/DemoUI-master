@@ -1,0 +1,1 @@
+[2021-01-11 16:59:29,263] [log.py|__console] [line:46] ERROR   : <public.page_obj.workPage.login object at 0x000001EE4EB49A90>页面中未能找到('class name', 'top_name')元素

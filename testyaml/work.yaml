@@ -1,0 +1,60 @@
+testinfo:
+      - id: test_login001
+        title: 登录测试
+        info: 打开智慧社区
+testcase:
+      - element_info: .login_btn > span:nth-child(2)
+        find_type: CSS_SELECTOR
+        operate_type: click
+        info: 点击系统登录按钮
+      - element_info: username
+        find_type: name
+        operate_type: send_keys
+        info: 输入手机号
+      - element_info: password
+        find_type: name
+        operate_type: send_keys
+        info: 输入密码
+      - element_info: imgCode
+        find_type: name
+        operate_type: send_keys
+        info: 输入图片验证码
+      - element_info: login
+        find_type: ID
+        operate_type: click
+        info: 单击登录按钮
+      - element_info: .el-submenu:nth-child(1) > .el-submenu__title > div
+        find_type: CSS_SELECTOR
+        operate_type: click
+        info: 点击事件管理模块
+      - element_info: 我受理事件
+        find_type: LINK_TEXT
+        operate_type: click
+        info: 我受理事件
+      - element_info: .el-table__fixed-right .el-button:nth-child(2) > span
+        find_type: CSS_SELECTOR
+        operate_type: click
+        info: 点击完成按钮
+      - element_info: .el-textarea__inner
+        find_type: CSS_SELECTOR
+        operate_type: send_keys
+        info: 输入完成信息
+      - element_info: .el-icon-plus
+        find_type: CSS_SELECTOR
+        operate_type: click
+        info: 点击上传图片按钮
+      - element_info: div.el-dialog__footer:nth-child(3) > div:nth-child(1) > button:nth-child(2)
+        find_type: CSS_SELECTOR
+        operate_type: click
+        info: 提交
+      - element_info: .icon-Logout
+        find_type: css selector
+        operate_type: click
+        info: 退出
+check:
+      - element_info: //div[@class='box-mobilelogin']/div[1]/span
+        find_type: XPATH
+        info: 检查输入手机号或密码，登录异常提示
+      - element_info: top_name
+        find_type: class name
+        info: 成功登录

@@ -1,0 +1,1 @@
+[2021-01-26 09:24:02,800] [log.py|__console] [line:46] ERROR   : <public.page_obj.workPage.login object at 0x000001A1E54FD7F0>页面中未能找到('xpath', '//*[@id="app"]/div/div[2]/div/section/div/div[6]/div/div[2]/form/div[3]/div/div/div/div[1]/input')元素
