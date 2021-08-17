@@ -14,6 +14,7 @@ from time import sleep
 from public.models.GetYaml import getyaml
 
 from public.models.imgCode import getCode
+
 testData = getyaml(setting.TEST_Element_YAML + '/' + 'login.yaml')
 
 
@@ -31,7 +32,6 @@ class login(Page):
         """
         # self.find_element(*self.dig_login_button_loc).click()
         sleep(1)
-
     # 定位器，通过元素属性定位元素对象
     # 手机号输入框
     login_phone_loc = (By.NAME, testData.get_elementinfo(0))

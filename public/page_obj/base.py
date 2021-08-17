@@ -9,8 +9,7 @@ from config import setting
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchFrameException, NoSuchWindowException, NoAlertPresentException, \
-    NoSuchElementException
+from selenium.common.exceptions import NoSuchFrameException, NoSuchWindowException, NoAlertPresentException, NoSuchElementException
 import configparser
 from public.models.log import Log
 
