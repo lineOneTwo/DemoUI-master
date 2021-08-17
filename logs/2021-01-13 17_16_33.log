@@ -1,1 +1,0 @@
-[2021-01-13 17:17:01,964] [log.py|__console] [line:46] ERROR   : <public.page_obj.workPage.login object at 0x0000028C448C1760>页面中未能找到('css selector', '.el-table__fixed-right .el-button:nth-child(2) > span')元素

@@ -3,8 +3,8 @@
   detail : 输入正确的手机号、密码、验证码，是否登录成功
   screenshot : phone_pawd_success
   data :
-    username : 18730001238
-    password: 123456
+    username : 18234242222
+    password: asdqwe123
     imgCode: ""
     textarea: good
     filePath: r'F:\MOCC\123.jpg'
