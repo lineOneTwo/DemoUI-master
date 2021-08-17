@@ -53,18 +53,18 @@ class Demo_UI(myunit.MyTest):
         self.user_login_verify(datayaml['data']['username'], datayaml['data']['password'], datayaml['data']['imgCode'])
         po = login(self.driver)
         if datayaml['screenshot'] == 'phone_pawd_success':
-            # log.info("检查点-> {0}".format(po.user_login_success_hint()))
-            # self.assertEqual(po.user_login_success_hint(), datayaml['check'][0],
-            #                  "成功登录，返回实际结果是->: {0}".format(po.user_login_success_hint()))
-            # log.info("成功登录，返回实际结果是->: {0}".format(po.user_login_success_hint()))
-            # screenshot.insert_img(self.driver, datayaml['screenshot'] + '.jpg')
-            # log.info("-----> 开始执行退出流程操作")
-            # self.exit_login_check()
-            # po_exit = login(self.driver)
-            # log.info("检查点-> 找到{0}元素,表示退出成功！".format(po_exit.exit_login_success_hint()))
-            # self.assertEqual(po_exit.exit_login_success_hint(), '注册',
-            #                  "退出登录，返回实际结果是->: {0}".format(po_exit.exit_login_success_hint()))
-            # log.info("退出登录，返回实际结果是->: {0}".format(po_exit.exit_login_success_hint()))
+            log.info("检查点-> {0}".format(po.user_login_success_hint()))
+            self.assertEqual(po.user_login_success_hint(), datayaml['check'][0],
+                             "成功登录，返回实际结果是->: {0}".format(po.user_login_success_hint()))
+            log.info("成功登录，返回实际结果是->: {0}".format(po.user_login_success_hint()))
+            screenshot.insert_img(self.driver, datayaml['screenshot'] + '.jpg')
+            log.info("-----> 开始执行退出流程操作")
+            self.exit_login_check()
+            po_exit = login(self.driver)
+            log.info("检查点-> 找到{0}元素,表示退出成功！".format(po_exit.exit_login_success_hint()))
+            self.assertEqual(po_exit.exit_login_success_hint(), '注册',
+                             "退出登录，返回实际结果是->: {0}".format(po_exit.exit_login_success_hint()))
+            log.info("退出登录，返回实际结果是->: {0}".format(po_exit.exit_login_success_hint()))
             print("登录成功")
         else:
             # # log.info("检查点-> {0}".format(po.phone_pawd_error_hint()))

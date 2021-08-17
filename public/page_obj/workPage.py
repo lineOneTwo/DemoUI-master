@@ -19,7 +19,7 @@ class TestTestWork():
     def teardown_method(self, method):
         self.driver.quit()
 
-    def test_testWork(self):
+    def workList(self):
         self.driver.get("http://sqwy.wt.com:5130/")
         self.driver.set_window_size(1936, 1056)
         self.driver.find_element(By.CSS_SELECTOR, "span").click()
