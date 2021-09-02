@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
-__author__ = 'YinJia'
 
 import os, sys
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from config import setting
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.action_chains import ActionChains
@@ -12,9 +9,8 @@ from selenium.webdriver.common.by import By
 from public.page_obj.base import Page
 from time import sleep
 from public.models.GetYaml import getyaml
-
 from public.models.imgCode import getCode
-
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 testData = getyaml(setting.TEST_Element_YAML + '/' + 'login.yaml')
 
 
@@ -39,6 +35,7 @@ class login(Page):
     login_password_loc = (By.NAME, testData.get_elementinfo(1))
     # 图片验证码
     picture_code_loc = (By.NAME, testData.get_elementinfo(2))
+    # picture_code_loc = (getCode())
     # 单击登录
     login_user_loc = (By.ID, testData.get_elementinfo(3))
     # 退出登录
@@ -113,7 +110,7 @@ class login(Page):
     def phone_pawd_error_hint(self):
         return self.find_element(*self.phone_pawd_error_hint_loc).text
 
-    # 登录成功用户名
+    # 登录成功信息获取
     def user_login_success_hint(self):
         return self.find_element(*self.user_login_success_loc).text
 

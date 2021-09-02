@@ -6,7 +6,7 @@
     username : 18234242222
     password: asdqwe123
     imgCode: ""
-    textarea: good
+    textarea: OK
     filePath: r'F:\MOCC\123.jpg'
   check :
     - 欢迎登录：大同招生政府

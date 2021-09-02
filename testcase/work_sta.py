@@ -10,6 +10,8 @@ import unittest, ddt, yaml
 from config import setting
 from public.models import myunit, screenshot
 from public.page_obj.workPage import work
+from public.page_obj.loginPage import login
+from public.models.imgCode import getCode
 from public.models.log import Log
 
 try:
@@ -24,7 +26,7 @@ except FileNotFoundError as file:
 class Demo_UI(myunit.MyTest):
     """登录测试"""
 
-    def user_login_verify(self, username, password):
+    def user_login_verify(self, username, password, imgCode):
         """
         用户登录
         :param username: 手机号
@@ -32,13 +34,13 @@ class Demo_UI(myunit.MyTest):
         :param imgCode: 图片验证码
         :return:
         """
-        work(self.driver).user_login(username, password)
+        login(self.driver).user_login(username, password, imgCode)
 
     def get_event(self, textarea):
         """
         查看事件
         """
-        work(self.driver).get_event_list(textarea)
+        login(self.driver).get_event_list(textarea)
 
     @ddt.data(*testData)
     def test_login(self, datayaml):
@@ -51,15 +53,15 @@ class Demo_UI(myunit.MyTest):
         log.info("当前执行测试用例ID-> {0} ; 测试点-> {1}".format(datayaml['id'], datayaml['detail']))
         # 调用登录方法
         for i in range(10):
-            self.user_login_verify(datayaml['data']['username'], datayaml['data']['password'])
-            po = work(self.driver)
+            self.user_login_verify(datayaml['data']['username'], datayaml['data']['password'], getCode())
+            po = login(self.driver)
             url = self.driver.current_url
             if url != "http://sso.wt.com:3100/loginPage?error":
                 log.info("检查点-> 登录名为：{0}".format(po.user_login_success_hint()))
                 self.assertEqual(po.user_login_success_hint(), datayaml['check'][0],
                                  "成功登录，登录名为->: {0}".format(po.user_login_success_hint()))
                 log.info("成功登录，登录名为->: {0}".format(po.user_login_success_hint()))
-                screenshot.insert_img(self.driver, datayaml['screenshot'] + '.jpg')
+                screenshot.insert_img(self.driver, datayaml['screenshot'] + '.png')
                 self.get_event(datayaml['data']['textarea'])
                 log.info("执行退出流程操作")
                 # self.exit_login_check()

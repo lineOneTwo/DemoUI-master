@@ -29,7 +29,7 @@ def run_case(all_case, result_path=setting.TEST_REPORT):
     fp = open(filename, 'wb')
     runner = HTMLTestRunner(stream=fp, title='UI自动化测试报告',
                             description='环境：windows 10 浏览器：chrome',
-                            tester='测试人员')
+                            tester='柴琳')
     runner.run(all_case)
     fp.close()
     report = new_report(setting.TEST_REPORT)  # 调用模块生成最新的报告

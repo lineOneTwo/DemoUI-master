@@ -9,7 +9,7 @@ import unittest, ddt, yaml
 from config import setting
 from public.models import myunit, screenshot
 from public.page_obj.setupPage import setup
-from public.page_obj.workPage import login
+from public.page_obj.loginPage import login
 from public.models.log import Log
 
 f_login = open(setting.TEST_DATA_YAML + '/' + 'work_data.yaml', encoding='utf-8')

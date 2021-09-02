@@ -5,15 +5,12 @@ import pytesseract
 import cv2
 # 导入time   sleep单位为秒  便于设置等待时间
 from PIL import Image, ImageEnhance
-import public.models.myunit
-
-# 该Login类继承页面类Page_Object
 
 
 def getCode():
     # 获取截图
     ran = Image.open("share/screeshots/screenshot/1.png")
-    # 截取二维码
+    # 截取图片验证码
     box = (1043, 456, 1105, 480)
     ran.crop(box).save("share/screeshots/screenshot/2.png")
     img = cv2.imread("share\screeshots\screenshot/2.png", -1)
@@ -42,7 +39,6 @@ def getCode():
     if code == '':
         return "no code"
     else:
-        print(code)
         return code
 
 
